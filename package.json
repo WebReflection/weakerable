@@ -29,6 +29,7 @@
     },
     "scripts": {
         "build": "npm run test && npm run types",
+        "coverage": "mkdir -p ./coverage; c8 report --reporter=text-lcov > ./coverage/lcov.info",
         "test": "c8 node --expose-gc test.js",
         "types": "tsc --allowJs --checkJs --declaration --emitDeclarationOnly --stripInternal --outDir types --target esnext --module nodenext --moduleResolution nodenext src/index.js"
     },
