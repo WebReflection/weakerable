@@ -42,10 +42,14 @@
         "c8": "^11.0.0",
         "typescript": "^6.0.3"
     },
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "Iterable WeakMap and WeakSet",
     "main": "index.js",
-    "keywords": ["iterable", "weakmap", "weakset"],
+    "keywords": [
+        "iterable",
+        "weakmap",
+        "weakset"
+    ],
     "author": "Andrea Giammarchi",
     "license": "MIT"
 }
