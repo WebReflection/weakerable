@@ -1,5 +1,9 @@
 # weakerable
 
+[![Coverage Status](https://coveralls.io/repos/github/WebReflection/weakerable/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/weakerable?branch=main)
+
+<sup>**Social Media Photo by [Pete Nuij](https://unsplash.com/@pete_nuij) on [Unsplash](https://unsplash.com/)**</sup>
+
 A tiny ESM module that provides iterable `WeakMap` and `WeakSet` wrappers.
 
 `weakerable` keeps the weak ownership semantics of native weak collections while
