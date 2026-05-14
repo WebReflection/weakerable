@@ -1,0 +1,50 @@
+{
+    "name": "weakerable",
+    "type": "module",
+    "files": [
+        "src",
+        "types",
+        "LICENSE",
+        "README.md"
+    ],
+    "types": {
+        ".": "./types/index.d.ts",
+        "./map": "./types/map.d.ts",
+        "./set": "./types/set.d.ts"
+    },
+    "exports": {
+        ".": {
+            "types": "./types/index.d.ts",
+            "import": "./src/index.js"
+        },
+        "./map": {
+            "types": "./types/map.d.ts",
+            "import": "./src/map.js"
+        },
+        "./set": {
+            "types": "./types/set.d.ts",
+            "import": "./src/set.js"
+        },
+        "package.json": "./package.json"
+    },
+    "scripts": {
+        "build": "npm run test && npm run types",
+        "test": "c8 node --expose-gc test.js",
+        "types": "tsc --allowJs --checkJs --declaration --emitDeclarationOnly --stripInternal --outDir types --target esnext --module nodenext --moduleResolution nodenext src/index.js"
+    },
+    "overrides": {
+        "c8": {
+            "yargs": "^18.0.0"
+        }
+    },
+    "devDependencies": {
+        "c8": "^11.0.0",
+        "typescript": "^6.0.3"
+    },
+    "version": "0.0.0",
+    "description": "Iterable WeakMap and WeakSet",
+    "main": "index.js",
+    "keywords": ["iterable", "weakmap", "weakset"],
+    "author": "Andrea Giammarchi",
+    "license": "MIT"
+}
