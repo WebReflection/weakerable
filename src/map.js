@@ -64,7 +64,7 @@ export default class Map {
     if (this.#map.has(key)) {
       return this.#map.get(key);
     }
-    const value = callback();
+    const value = callback(key);
     this.#map.set(key, value);
     this.#refs.push(new WeakRef(key));
     return value;
