@@ -47,7 +47,12 @@ export default class Map {
    * @returns {V}
    */
   getOrInsert(key, defaultValue) {
-    return this.#map.getOrInsert(key, defaultValue);
+    if (this.#map.has(key)) {
+      return this.#map.get(key);
+    }
+    this.#map.set(key, defaultValue);
+    this.#refs.push(new WeakRef(key));
+    return defaultValue;
   }
 
   /**
@@ -56,7 +61,13 @@ export default class Map {
    * @returns {V}
    */
   getOrInsertComputed(key, callback) {
-    return this.#map.getOrInsertComputed(key, callback);
+    if (this.#map.has(key)) {
+      return this.#map.get(key);
+    }
+    const value = callback(key);
+    this.#map.set(key, value);
+    this.#refs.push(new WeakRef(key));
+    return value;
   }
 
   /**
